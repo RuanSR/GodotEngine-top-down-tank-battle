@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/Spritesheet/onlyObjects_retina_rotated.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40.5, 41 )
+
+[node name="Player" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+Bullet = null
+speed = 10
+rotation_speed = 0.4
+gun_cooldown = 1.0
+health = 100
+
+[node name="Body" parent="." index="0"]
+
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 308, 262, 80, 84 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Turrent" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 13.8138, -0.192749 )
+texture = ExtResource( 3 )
+offset = Vector2( 26.1862, 0.192749 )
+region_enabled = true
+region_rect = Rect2( 684, 14, 60, 24 )
+
+[node name="Muzzie" parent="Turrent" index="0"]
+
+visible = false
+position = Vector2( 26.6559, 69.3586 )
+_sections_unfolded = [ "Transform" ]
+
+
